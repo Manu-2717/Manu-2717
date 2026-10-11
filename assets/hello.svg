@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 160" role="img" aria-labelledby="title desc">
+  <title id="title">Meyank: computer vision, AI, and open source</title>
+  <desc id="desc">A dark banner with a moving light and blinking cursor.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101827"/>
+      <stop offset="1" stop-color="#172b46"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#63e6be"/>
+      <stop offset="1" stop-color="#74c0fc"/>
+    </linearGradient>
+  </defs>
+  <rect width="840" height="160" rx="20" fill="url(#background)"/>
+  <path d="M0 126 H840" stroke="#29415b" stroke-width="1"/>
+  <path d="M-180 126 H0" stroke="url(#accent)" stroke-width="3">
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="1020 0" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="748" cy="49" r="32" fill="none" stroke="#4d7992" stroke-width="1" opacity=".6"/>
+  <circle cx="748" cy="49" r="18" fill="none" stroke="#63e6be" stroke-width="1" opacity=".7"/>
+  <circle cx="748" cy="31" r="4" fill="#63e6be">
+    <animateTransform attributeName="transform" type="rotate" from="0 748 49" to="360 748 49" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <text x="36" y="62" fill="#f1f5f9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="30" font-weight="700">MEYANK</text>
+  <rect x="164" y="38" width="10" height="28" fill="#63e6be">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.45;.5;.95;1" dur="1.4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="38" y="100" fill="#b6d7e7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17">computer vision · AI tools · open source</text>
+  <circle cx="38" cy="141" r="3" fill="#63e6be"/>
+  <circle cx="52" cy="141" r="3" fill="#74c0fc"/>
+  <circle cx="66" cy="141" r="3" fill="#a5d8ff"/>
+</svg>
