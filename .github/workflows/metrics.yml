@@ -1,0 +1,80 @@
+name: GitHub Metrics
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Contribution calendar
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Manu-2717
+          filename: assets/metrics/contributions.svg
+          output_action: commit
+          committer_branch: main
+          base: ''
+          config_display: large
+          plugin_calendar: yes
+          plugin_calendar_limit: 1
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+      - name: GitHub statistics
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Manu-2717
+          filename: assets/metrics/overview.svg
+          output_action: commit
+          committer_branch: main
+          base: header, activity, community, repositories
+          base_indepth: yes
+          config_display: large
+
+      - name: Languages and activity
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Manu-2717
+          filename: assets/metrics/activity.svg
+          output_action: commit
+          committer_branch: main
+          base: ''
+          config_display: large
+          config_timezone: Asia/Kolkata
+          plugin_languages: yes
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_activity: yes
+          plugin_activity_limit: 5
+
+      - name: Achievements and notable contributions
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Manu-2717
+          filename: assets/metrics/achievements.svg
+          output_action: commit
+          committer_branch: main
+          base: ''
+          config_display: large
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_notable: yes
+          plugin_notable_self: no
